@@ -5,6 +5,10 @@
 --
 -- For week 1 of the Future Learn Haskell MOOC
 --
+-- For more Haskell problems, see Ninety-nine Haskell problems:
+--
+--   https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems 
+--
 
 -- [1] Implement sign which returns -1, 0 or +1 depending on the sign of the argument
 -- use only ifThenElse and < >
@@ -38,7 +42,12 @@ middle 3 1 2 == 2
 -- [3] Implement Heron's formula which finds the area of a triangle from its sides
 -- see https://en.wikipedia.org/wiki/Heron%27s_formula
 -- use the obvious let binding 
-area a b c = ???
+area a b c = 
+	let
+		s = (a + b + c) / 2;
+		area = sqrt (s * (s - a) * (s - b) * (s - c));
+	in
+		area
 
 --expected behaviour
 area 3 4 5 == 6
@@ -51,7 +60,10 @@ area 3 4 5 == 6
 data Color  = Red  | Orange | Green
 
 trafficLight :: Color -> String
-trafficLight c = ???
+trafficLight c = case c of
+		Red -> "Red"
+		Orange -> "Orange"
+		Green -> "Green"
 
 --expected behaviour
 trafficLight Green  == "Go"
@@ -63,7 +75,7 @@ trafficLight Red    == "Stop"
 -- [5] Implement initials which reduces a list of words to their initials
 -- use a list comprehension and the head function
 initials :: [String] -> String
-initials words = ???
+initials words = [ x | x:xs <- words]
 
 -- expected behaviour
 initials ["post", "script"] == "ps"

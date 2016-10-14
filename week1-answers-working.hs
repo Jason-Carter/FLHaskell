@@ -1,7 +1,8 @@
--- [3] Implement Heron's formula which finds the area of a triangle from its sides
--- see https://en.wikipedia.org/wiki/Heron%27s_formula
--- use the obvious let binding 
-area a b c = ???
+-- [6] Implement hide which converts the letters of a word to asterisks
+-- use only a list comprehension
+hide :: String -> String
+hide w = ???
 
---expected behaviour
---area 3 4 5 == 6
+-- expected behaviour
+hide "secret" == "******"
+hide "out"    == "***"
